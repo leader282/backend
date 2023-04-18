@@ -19,7 +19,7 @@ class Home(APIView):
         serializer = PendulumSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
-            return  redirect("http://localhost:3000/")
+            return  redirect("https://aritraspendulum.netlify.app/")
 
 class GRAPH(APIView):
     serializer_class = GraphSerializer
