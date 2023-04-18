@@ -33,7 +33,7 @@ class GRAPH(APIView):
         serializer = GraphSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
-            return  redirect("http://localhost:3000/")
+            return  redirect("https://aritraspendulum.netlify.app/")
 
 @ensure_csrf_cookie
 def delete(request):
@@ -42,7 +42,7 @@ def delete(request):
         pendulum  = Pendulum.objects.filter(pk=id)
         pendulum.delete()
 
-    return redirect("http://localhost:3000/")
+    return redirect("https://aritraspendulum.netlify.app/")
 
 @ensure_csrf_cookie
 def remove(request):
@@ -52,4 +52,4 @@ def remove(request):
         graph = Graph.objects.filter(axis_l=axis_l, axis_b=axis_b)
         graph.delete()
 
-    return redirect("http://localhost:3000/")
+    return redirect("https://aritraspendulum.netlify.app/")
